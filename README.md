@@ -22,7 +22,7 @@ Built with HTML, CSS, JavaScript, PHP and MySQL, and runs on XAMPP.
 Needs XAMPP with PHP 8.1 or newer.
 
 1. Start **Apache** and **MySQL** in the XAMPP Control Panel.
-2. Copy this `app` folder into `C:\xampp\htdocs\` and name it `pcbuild`.
+2. Copy this folder into `C:\xampp\htdocs\` as `pcbuild`.
    Any name works; the links adapt to it.
 3. Open <http://localhost/phpmyadmin>, choose **Import**, and import
    `sql/schema.sql`, then `sql/components.sql`. The first file creates the
@@ -35,9 +35,7 @@ administrator's Sales page is empty. To show it working, import
 `sql/demo-sales.sql` as well, after the other two: 18 made-up customers
 (password **Demo@1234**) and a year of orders, counted back from the moment
 it is imported. It touches no stock. Importing it again replaces the earlier
-import; importing `schema.sql` again removes it with everything else. It is
-written by `tools/make-demo-sales.php`, which picks every configuration with
-the system's own rule engine.
+import; importing `schema.sql` again removes it with everything else.
 
 Customers register themselves. The administrator account comes with the
 database: **admin@pcbuild.local**, password **Admin@123**. Change that password
@@ -48,25 +46,3 @@ If MySQL has a password on your machine, put it in `DB_PASS` in
 
 If a page says the database is not running or has not been created, it also
 says what to do: start MySQL, or import the two SQL files.
-
-## Running it without XAMPP
-
-PHP's own development server works too. From the repository root:
-
-    php -S 127.0.0.1:8080 -t app tests/e2e/router.php
-
-The router makes the development server answer like Apache. Point it at a
-database elsewhere with the `DB_DSN`, `DB_USER` and `DB_PASS` environment
-variables.
-
-## Tests
-
-Browser tests live in `tests/e2e`. They drive a real Chromium against a running
-copy of the system:
-
-    cd tests/e2e
-    npm install
-    BASE_URL=http://127.0.0.1:8080 node run.js
-
-Each test has an id, such as T1.14, that matches the test record in
-`docs/testing/test-record.md`.
