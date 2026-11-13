@@ -1,0 +1,3 @@
+# The SQL files are imported through phpMyAdmin, never served. schema.sql
+# carries the administrator's password hash, so refuse every request for it.
+Require all denied
