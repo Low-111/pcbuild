@@ -1,4 +1,11 @@
 # PC Build Configurator and Inventory Management System
+DCS2102 Rapid Application Development, Group Project 
+INTI International College Penang, August 2026
+
+Group members:
+-Low Kai Lun (P23015563)
+-Brandon Liong (P24015926)
+
 
 A web system for a shop that sells custom-built desktop PCs. Customers assemble
 a configuration from the shop's components and the system checks, as they go,
