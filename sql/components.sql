@@ -317,11 +317,12 @@ INSERT INTO component
 -- ---------------------------------------------------------------------------
 -- Product photographs (13 November 2026), in assets/img/components/: one per
 -- part, squared on white so the catalogue's thumbnails never crop a product.
--- A part with no photograph shows its category's icon instead. Four parts have
--- none yet, because the picture supplied showed a different product:
--- PRO X870E-S EVO WIFI (the box is the X870E GAMING PLUS WIFI), the Lexar DDR4
--- 16GB (the stick is ADATA), the PRIME RX 9070 EVO OC (the card is the RX 9070
--- GRE) and the AP Series 750W (the unit pictured is ASUS's, the shop lists AIGO).
+-- A part with no photograph shows its category's icon instead. Four of the
+-- pictures show a close relative rather than the exact product, and are used
+-- as stand-ins until an exact one is found: PRO X870E-S EVO WIFI (the box is
+-- the X870E GAMING PLUS WIFI), the Lexar DDR4 16GB (the stick is ADATA), the
+-- PRIME RX 9070 EVO OC (the card is the RX 9070 GRE) and the AP Series 750W
+-- (the unit pictured is ASUS's, the shop lists AIGO).
 -- ---------------------------------------------------------------------------
 UPDATE component SET image_url = 'assets/img/components/msi-mag-b850m-mortar-wifi.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'Motherboard') AND name = 'MAG B850M MORTAR WIFI';
 UPDATE component SET image_url = 'assets/img/components/gigabyte-b850-aorus-stealth-black.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'Motherboard') AND name = 'B850 AORUS STEALTH BLACK';
@@ -376,6 +377,10 @@ UPDATE component SET image_url = 'assets/img/components/gigabyte-p650g-pg5-650w-
 UPDATE component SET image_url = 'assets/img/components/cooler-master-mwe-gold-v3-850w-atx3-1.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'PSU') AND name = 'MWE GOLD V3 850W ATX3.1';
 UPDATE component SET image_url = 'assets/img/components/corsair-rm850e-850w-80-gold.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'PSU') AND name = 'RM850e 850W 80+ Gold';
 UPDATE component SET image_url = 'assets/img/components/corsair-rm1000e-1000w-atx3-1.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'PSU') AND name = 'RM1000E 1000W ATX3.1';
+UPDATE component SET image_url = 'assets/img/components/msi-pro-x870e-s-evo-wifi.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'Motherboard') AND name = 'PRO X870E-S EVO WIFI';
+UPDATE component SET image_url = 'assets/img/components/lexar-ddr4-desktop-16gb-3200-cl22.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'RAM') AND name = 'DDR4 Desktop 16GB 3200 CL22';
+UPDATE component SET image_url = 'assets/img/components/asus-prime-radeon-rx-9070-evo-oc-16gb.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'GPU') AND name = 'PRIME Radeon RX 9070 EVO OC 16GB';
+UPDATE component SET image_url = 'assets/img/components/aigo-ap-series-750w.jpg' WHERE category_id = (SELECT category_id FROM category WHERE category_name = 'PSU') AND name = 'AP Series 750W';
 
 -- ---------------------------------------------------------------------------
 -- The stock ledger's first page (3 November 2026): one "opening" row for every
